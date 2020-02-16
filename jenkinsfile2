@@ -4,7 +4,9 @@ pipeline{
 
 				stage('clone'){steps{sh 'echo cloning the code'}}
 				stage('test'){steps{sh 'echo testing the code'}}
+				
 				stage('get approval'){input "deploy to QA environment?"}
+				
 				stage('deploy'){steps{sh 'echo deploying the code'}}
 
 			}
